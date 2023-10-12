@@ -32,7 +32,7 @@ export default function PostPage() {
 
   return (
     <>
-      <h1>A single post</h1>
+      <h1 className="bg-red-200">A single post</h1>
       <section>
         <h2>{post?.title}</h2>
       </section>
