@@ -1,5 +1,6 @@
 import { Outlet } from "@tanstack/react-router";
 import Navbar from "./components/navbar";
+import Footer from "./components/navbar/footer"
 import "./App.css";
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
       </main>
 
       <footer>
-        <small>Created with ❤️ by You</small>
+        <Footer />
       </footer>
     </>
   );
