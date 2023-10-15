@@ -29,7 +29,13 @@ export default function ManipulatePost({ id = "no id" }) {
     setIsEditing(true);
   }
   async function handleOnDelete() {
-    deletePost(id);
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this post?"
+    );
+
+    if (confirmDelete) {
+      deletePost(id);
+    }
   }
   async function editPost(event) {
     event.preventDefault();
