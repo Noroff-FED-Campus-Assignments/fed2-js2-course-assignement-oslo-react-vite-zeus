@@ -4,6 +4,10 @@ import { Link } from "@tanstack/react-router";
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  function handleOnSearch(srchInp) {
+    console.log(srchInp);
+  }
+
   return (
     <>
       <nav className="bg-white border-2 border-white border-b-blue-500">
@@ -47,9 +51,13 @@ export default function Navigation() {
                 Login
               </Link>
               <input
-                type="text"
+                type="search"
                 placeholder="Search"
-                className="px-2 font-light border-2 border-blue-500 rounded-3xl"
+                className="px-2 font-light border-2 bg-blue-100 border-blue-500 rounded-3xl"
+                id="searchInput"
+                onKeyUp={(event) => {
+                  handleOnSearch(event.target.value);
+                }}
               />
             </div>
 

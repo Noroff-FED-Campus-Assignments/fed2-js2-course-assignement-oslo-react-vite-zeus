@@ -4,7 +4,7 @@ export default function writePosts() {
   const submitHandler = async (e) => {
     e.preventDefault();
     const form = e.target;
-    const { title, body, media } = form.elements;
+    const { title, body } = form.elements;
     const req = await fetch(`${API_URL}/social/posts`, {
       method: "post",
       headers: {
@@ -14,7 +14,6 @@ export default function writePosts() {
       body: JSON.stringify({
         title: title.value,
         body: body.value,
-        media: media.value,
       }),
     });
     const data = await req.json();
@@ -29,7 +28,7 @@ export default function writePosts() {
             className="flex flex-col items-center"
           >
             <img
-              src=""
+              src="src/assets/defaultprofilepic.png"
               className="label-text-alt object-cover w-24 h-24 rounded-full my-2"
             />
             <Link
