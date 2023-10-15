@@ -16,7 +16,7 @@ Currently, two official plugins are available:
 
 - [Brief](https://fed-vocational-astro-course.vercel.app/en/javascript-2/ca/ca)
 - [Design](https://www.figma.com/file/yRXnqBF2sY3ZUJGe0RfsuS/Javascript-2-CA?type=design&node-id=0-1&mode=design&t=AuOfK2IbChmfJIUE-0)
-- [Production deploy](https://teamzeusjs2.netlify.app/)
+- [Production deploy](https://main--teamzeusjs2.netlify.app/)
 - [Deployment CI](_LINK_TO_NETLIFY_VERCEL_DASHBOARD_)
 
 ## Report FED2-Javascript 2 Course Assignment
