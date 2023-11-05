@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "test": "vitest run",
+    "test": "vitest run npm run test-e2e",
+    "test-e2e": "cypress open",
     "test:ui": "vitest --ui",
     "test:watch": "vitest",
     "build": "vite build",
