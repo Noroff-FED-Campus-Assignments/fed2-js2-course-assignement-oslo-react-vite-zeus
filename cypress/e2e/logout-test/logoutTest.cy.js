@@ -18,5 +18,6 @@ describe('Logout Test', () => {
 
     // Assert that the user is logged out (e.g., check for login page elements)
     cy.get('.text-lg').contains('Login').should('exist');
+    //cy.get('.text-lg').contains('Logout').should('not.exist'); (will return error)
   });
 });
