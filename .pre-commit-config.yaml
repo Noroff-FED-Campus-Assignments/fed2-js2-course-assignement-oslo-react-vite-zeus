@@ -1,0 +1,9 @@
+# pre-commit-hook.yaml
+
+# Use the latest version of the Prettier mirror
+repo: https://github.com/pre-commit/mirrors-prettier
+rev: ""
+
+# Configure the Prettier hook
+hooks:
+  - id: prettier

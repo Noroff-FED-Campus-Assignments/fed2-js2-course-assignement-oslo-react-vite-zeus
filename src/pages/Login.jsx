@@ -22,13 +22,13 @@ export default function LoginPage() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ email, password }),
-        }
+        },
       );
 
       if (response.ok) {
         const data = await response.json();
         console.log("Response Data:", data);
-        
+
         if (data && data.accessToken) {
           localStorage.setItem("accessToken", data.accessToken);
           localStorage.setItem("user_email", data.email);

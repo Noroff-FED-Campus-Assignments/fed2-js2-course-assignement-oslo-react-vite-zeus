@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function Profile() {
   const [profile, setProfile] = useState(null);
@@ -45,7 +45,7 @@ function Profile() {
         console.error("Error fetching profile data:", error);
         setLoading(false);
       });
-  }, []);
+  }, [token, user_name]);
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen p-4 mx-auto bg-white max-w-7xl">

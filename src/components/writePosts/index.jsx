@@ -23,7 +23,6 @@ export default function writePosts() {
   return (
     <>
       <div className="flex flex-col items-center justify-center w-full max-w-3xl px-8 pt-3 mx-auto mt-3 form-control">
-
         <div className="flex flex-col justify-start w-full gap-2 md:flex-row gap-y-2 max-w-7xl ">
           <div
             role="profile-pic-container"
@@ -65,9 +64,7 @@ export default function writePosts() {
               value="Post"
             />
           </form>
-
         </div>
-
       </div>
     </>
   );

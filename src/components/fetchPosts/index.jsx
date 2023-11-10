@@ -11,7 +11,6 @@ export default function FetchPosts() {
   const [searchInput, setSearchInput] = useState("");
   const defaultAvatar = "/defaultprofilepic.png";
 
-
   useEffect(() => {
     const GetPosts = async () => {
       try {

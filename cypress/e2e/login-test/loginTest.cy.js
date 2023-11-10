@@ -2,7 +2,7 @@ describe("Successfull Login Request Test", () => {
   it("Checks if the fetch request is OK", () => {
     // Intercept the POST request
     cy.intercept("POST", "https://api.noroff.dev/api/v1/social/auth/login").as(
-      "loginRequest"
+      "loginRequest",
     );
 
     cy.visit("http://localhost:5173/login");
@@ -37,7 +37,7 @@ describe("Declined Login Request Test", () => {
   it("Submits invalid login credentials and expects failure", () => {
     // Intercept the POST request and alias it
     cy.intercept("POST", "https://api.noroff.dev/api/v1/social/auth/login").as(
-      "failedLoginRequest"
+      "failedLoginRequest",
     );
 
     // Input the email and password
@@ -63,18 +63,18 @@ describe("Declined Login Request Test", () => {
       expect(interception.response.body).to.have.property("errors");
       expect(interception.response.body.errors[0]).to.have.property(
         "message",
-        "Invalid email or password"
+        "Invalid email or password",
       );
       expect(interception.response.body).to.have.property(
         "status",
-        "Unauthorized"
+        "Unauthorized",
       );
     });
 
     // Add assertions to verify the UI behavior after form submission
     // Checking for an error message on the screen
     cy.contains(
-      "Invalid credentials. Please check your email and password."
+      "Invalid credentials. Please check your email and password.",
     ).should("be.visible");
 
     // Check that the user is not redirected to the profile page

@@ -30,7 +30,7 @@ export default function ManipulatePost({ id = "no id" }) {
   }
   async function handleOnDelete() {
     const confirmDelete = window.confirm(
-      "Are you sure you want to delete this post?"
+      "Are you sure you want to delete this post?",
     );
 
     if (confirmDelete) {
@@ -60,7 +60,7 @@ export default function ManipulatePost({ id = "no id" }) {
             Authorization: `Bearer ${accessToken}`,
           },
           body: JSON.stringify(payload),
-        }
+        },
       );
 
       const json = await response.json();
