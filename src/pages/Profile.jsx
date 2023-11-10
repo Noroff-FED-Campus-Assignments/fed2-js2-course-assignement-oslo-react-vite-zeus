@@ -1,11 +1,13 @@
-/**
- * Displays a single profile
- * @see https://docs.noroff.dev/social-endpoints/profiles
- */
+import Profile from "../components/profile-page";
+import FetchPosts from "../components/fetchPosts";
+import WritePosts from "../components/writePosts";
 export default function ProfilePage() {
   return (
     <>
-      <h1>Profile Page</h1>
+      <Profile/>
+      <WritePosts />
+      <FetchPosts />
     </>
   );
 }
+

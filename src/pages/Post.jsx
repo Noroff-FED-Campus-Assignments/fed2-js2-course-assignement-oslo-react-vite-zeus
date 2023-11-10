@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { API_URL } from "../lib/constants";
 
 const initialPostState = {
   title: "No post found",
@@ -7,34 +8,44 @@ const initialPostState = {
   id: null,
 };
 
-/**
- * Displays a single post
- * @see https://docs.noroff.dev/social-endpoints/posts
- */
 export default function PostPage() {
   const [post, setPost] = useState(initialPostState);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // TIP: Get the ID from the search params in the URL
-        // TIP: Fetch the post from the API using the ID
-        // TIP: Set the post in state
+        const params = new URLSearchParams(window.location.search);
+        const postId = params.get("id");
+        const accessToken = localStorage.getItem("access_token");
+        const resp = await fetch(`${API_URL}/social/posts/${postId}`, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+        const data = await resp.json();
+        setPost(data);
+        console.log(data);
       } catch (error) {
-        // TIP: Handle errors from the API
+        setError(error);
       } finally {
-        // TIP: Set loading to false
+        setIsLoading(false);
       }
     };
 
     fetchData();
   }, []);
 
+  if (isLoading) return <h1>Loading...</h1>;
+  if (error) return <h1>Something went wrong! {error?.message}</h1>;
+
   return (
     <>
-      <h1>A single post</h1>
       <section>
         <h2>{post?.title}</h2>
+        <p>{post?.body}</p>
+        <img className="max-w-lg" src={post.media} alt="" />
       </section>
     </>
   );
