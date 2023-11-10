@@ -72,6 +72,11 @@ The design for this project was frustrating, the data from the API was lackluste
 In conclusion, a fun project when I truly got around to help build it, my view for the project was broader initially and that reflects in the work, I had hoped to get more features implemented, and with time would have done so.
 
 I'm sorry to see the end of this particular team, both Ali and Sander are good dev's who I have enjoyed working with.
+
+
+
+
+
   
 
 ## Authors
