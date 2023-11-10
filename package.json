@@ -9,6 +9,8 @@
     "test-e2e": "cypress open",
     "test:ui": "vitest --ui",
     "test:watch": "vitest",
+    "test:Login": "vitest run",
+    "test:index": "vitest run",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
@@ -17,6 +19,7 @@
   "dependencies": {
     "@tanstack/react-query": "^4.33.0",
     "@tanstack/react-router": "^0.0.1-beta.152",
+    "@testing-library/user-event": "^14.5.1",
     "pre-commit": "^1.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

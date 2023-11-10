@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 
+/* eslint-disable */
+export function handleLogout() {
+  localStorage.clear();
+}
+/* eslint-enable */
+
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const handleLogout = () => {
-    localStorage.clear();
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
