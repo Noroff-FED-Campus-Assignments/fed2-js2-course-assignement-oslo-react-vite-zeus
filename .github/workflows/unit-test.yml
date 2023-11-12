@@ -1,24 +1,27 @@
-name: Automated Unit Testing
+name: unit tests
+
 on:
-  - pull_request
-  - workflow_dispatch
+  push:
+    branches: ["main", "staging", "testing-workflow-ca"]
+  pull_request:
+    branches: ["main", "staging", "testing-workflow-ca"]
 
 jobs:
-  run-unit-tests:
-    name: Run Unit Tests
+  build:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
     steps:
-      - name: Checkout under $GITHUB_WORKSPACE
-        uses: actions/checkout@main
-
-      - name: Set up NodeJS
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
-          node-version: 16
-
-      - name: Install all dependencies
-        run: npm install
-
-      - name: Run Tests
-        run: npm run test:Login
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm run test:Login
