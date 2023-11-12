@@ -15,3 +15,5 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           browser: chrome
+          start: npm run start-after-50-seconds
+          wait-on: "http://localhost:5173"
