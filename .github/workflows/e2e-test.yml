@@ -11,16 +11,7 @@ jobs:
       - name: Checkout under $GITHUB_WORKSPACE
         uses: actions/checkout@main
 
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Run Development Server
-        run: npm run dev -- --port 5173 # Adjust the port as per your application's configuration
-
-      - name: Wait for the server to start
-        run: sleep 10 # Adjust the sleep duration based on how long it takes for your server to start
-
-      - name: Run E2E Tests with Cypress
+      - name: run cypress tests with chrome
         uses: cypress-io/github-action@v4
         with:
           browser: chrome
